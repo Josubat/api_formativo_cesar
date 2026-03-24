@@ -10,10 +10,10 @@ class cliente:
 
     def todic(self):
         return {
-            "id": int(self.Cli_id) if self.Cli_id is not None else None,  # ✅ convertido a int
+            "id": int(self.Cli_id) if self.Cli_id is not None else None, 
             "nombre": self.Cli_nombre,
             "apellido": self.Cli_apellido,
-            "telefono": self.Cli_telefono,  # ✅ corregido typo
+            "telefono": self.Cli_telefono,  
             "direccion": self.Cli_direccion,
             "correo": self.Cli_correo
         }
