@@ -1,5 +1,5 @@
 from flask import blueprint
-from controllers.producto_controller import cnlistado
+from controllers.cliente_controlles import cnlistado
 
 clientes_bp = blueprint('clientes', __name__)
 @clientes_bp.route('/')
