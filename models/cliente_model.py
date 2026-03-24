@@ -7,3 +7,13 @@ class cliente:
         self.Cli_telefono = CLI_TELEFONO
         self.Cli_direccion = CLI_DIRECCION
         self.Cli_correo = CLI_CORREO
+
+    def todic(self):
+        return{
+            "id":int(self.Cli_id),
+            "nombre":self.Cli_nombre,
+            "apellido":self.Cli_apellido,
+            "telfono":self.Cli_telefono,
+            "direccion":self.Cli_direccion,
+            "correo":self.Cli_correo
+            }
