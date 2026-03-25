@@ -8,5 +8,5 @@ def cnlistado():
 
     except Exception as e:
         import traceback
-        print(traceback.format_exc())  # 👈 ESTO ES LA CLAVE
+        print(traceback.format_exc())
         return jsonify({"error": str(e)}), 500
