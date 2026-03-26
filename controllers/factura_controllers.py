@@ -1,11 +1,10 @@
-from flask import jsonify, request
-from services.cliente_service import listarCliente
+from flask import jsonify
+from services.factura_service import listarFactura
 
 def cnlistado():
     try:
-        datos = listarCliente()
+        datos = listarFactura()
         return jsonify(datos), 200
-
     except Exception as e:
         import traceback
         print(traceback.format_exc())
