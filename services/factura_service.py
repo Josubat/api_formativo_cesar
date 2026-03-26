@@ -1,24 +1,23 @@
-from flask import current_app
 from models.factura_model import factura
+import MySQLdb.cursors
+from flask import current_app
 
 def listarFactura():
-    c = current_app.mysql.connection.cursor()
-    
-    sql = "SELECT Fac_id, Fac_fecha_emision, Fac_email_enviado, Fac_forma_pago, Fac_total, Fac_Usu_id_fk FROM factura"
-    c.execute(sql)
-    datos = c.fetchall()
-    
-    lista = []
-    
-    for p in datos:
-        fac = factura(
-            FAC_ID = p[0] if p[0] else None,
-            FAC_FECHA_EMISION = p[1],
-            FAC_EMAIL_ENVIADO = p[2],
-            FAC_FORMA_PAGO = p[3],
-            FAC_TOTAL = p[4],
-            FAC_USU_ID_FK = p[5]
-        ).todic()
-        lista.append(fac)
-    
-    return lista
+    try:
+        cursor = current_app.mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("""
+            SELECT
+                fac_id as id,
+                fac_fecha_emision as fecha_emision,
+                fac_email_enviado as email_enviado,
+                fac_forma_pago as forma_pago,
+                fac_total as total,
+                fac_usu_id_fk as usuario_id
+            FROM factura
+        """)
+        facturas = cursor.fetchall()
+        cursor.close()
+        return facturas
+    except Exception as e:
+        print(f"Error en listarFactura: {str(e)}")
+        return []
