@@ -17,3 +17,5 @@ class cliente:
             "direccion": self.cli_direccion,
             "correo": self.cli_correo
         }
+        
+        #c.lastrowid

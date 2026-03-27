@@ -23,7 +23,19 @@ def listarCliente():
         lista.append(cli)
     
     return lista
-def registrarCliente():
+
+
+def registrarCliente(CLI_ID, CLI_NOMBRE, CLI_APELLIDO, CLI_TELEFONO, CLI_DIRECCION, CLI_CORREO):
+    c = current_app.mysql.connection.cursor()
+    sql = "insert into t_cliente (cli_id, cli_nombre, cli_apellido, cli_telefono, cli_direccion, cli_correo) values (%s,%s,%s,%s,%s,%s)"
+    
+    c.execute(sql,(CLI_ID, CLI_NOMBRE, CLI_APELLIDO, CLI_TELEFONO, CLI_DIRECCION, CLI_CORREO))
+    current_app.mysql.connection.commit()
+    id = c.lastrowid
+    c.close()
+    return cliente(CLI_ID, CLI_NOMBRE, CLI_APELLIDO, CLI_TELEFONO, CLI_DIRECCION, CLI_CORREO).todic()
+    
+    
     return
 
 def editarCliente():

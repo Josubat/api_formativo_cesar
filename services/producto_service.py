@@ -1,4 +1,4 @@
-from models.producto_model import producto
+#from models.producto_model import producto
 import MySQLdb.cursors
 from flask import current_app
 

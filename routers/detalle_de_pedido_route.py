@@ -1,5 +1,5 @@
 from flask import Blueprint
-from controllers.detalle_de_pedido_controlles import cnlistadodet
+from controllers.detalle_de_pedido_controllers import cnlistadodet
 
 detalles_bp = Blueprint('detalles',__name__)
 
