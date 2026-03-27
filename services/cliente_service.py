@@ -4,7 +4,7 @@ from models.cliente_model import cliente
 def listarCliente():
     c = current_app.mysql.connection.cursor()
     
-    sql = "SELECT Cli_id, Cli_nombre, Cli_apellido, Cli_telefono, Cli_direccion, Cli_correo FROM cliente"
+    sql = "SELECT cli_id, cli_nombre, cli_apellido, cli_telefono, cli_direccion, cli_correo FROM t_cliente"
     c.execute(sql)
     datos = c.fetchall()
     

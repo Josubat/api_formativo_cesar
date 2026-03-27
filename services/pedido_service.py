@@ -4,7 +4,7 @@ from models.pedido_model import pedido
 def listarPedido():
     c = current_app.mysql.connection.cursor()
     
-    sql = "SELECT Ped_id, Ped_fecha, Ped_metodo_pago, Ped_estado_entrega, Ped_total, Ped_cli_id_fk, Ped_det_id_fk From pedido"
+    sql = "SELECT ped_id, ped_fecha, ped_metodo_pago, ped_estado_entrega, ped_total, ped_cli_id_fk, ped_det_id_fk From t_pedido"
     c.execute(sql)
     reg = c.fetchall()
     
