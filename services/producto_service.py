@@ -16,7 +16,7 @@ def listarProducto():
                 pro_descripcion as descripcion,
                 pro_prov_id_fk as proveedor_id,
                 pro_det_id_fk as detalle_id
-            FROM producto
+            FROM t_producto
         """)
         productos = cursor.fetchall()
         cursor.close()
