@@ -2,8 +2,8 @@ from .cliente import clientes_bp
 from .pedido import pedido_bp
 from .factura import facturas_bp
 from .producto import productos_bp
-from .detalle_de_pedido_route import detalles_bp
-from .proveedor import proveedores_bp
+from .detalle_de_pedido import detalles_bp
+from .provedor import proveedores_bp
 from .inventario_movimiento import inventario_bp
 #from .usuario import usuarios_bp
 

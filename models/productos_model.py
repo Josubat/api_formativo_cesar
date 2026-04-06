@@ -1,4 +1,4 @@
-class productos:
+class producto:
     def __init__(self, proID, proCategoria, proCantidad, proPrecio, proNombre, proFechaCaducidad, proDescripcion, proIDprovedor, proIDdetalle):
         self.Pro_id = proID
         self.Pro_categoria = proCategoria
