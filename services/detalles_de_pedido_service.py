@@ -18,4 +18,3 @@ def listarDetallePedido():
         ).diccionario_ped()
         listadetped.append(det)
     return listadetped
-
