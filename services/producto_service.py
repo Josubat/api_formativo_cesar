@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+from models.productos_model import producto
+=======
 #from models.producto_model import producto
+>>>>>>> 01532b250e8ff3fde7bbe648d1a5577e6f6dc951
 import MySQLdb.cursors
 from flask import current_app
 
@@ -16,7 +20,7 @@ def listarProducto():
                 pro_descripcion as descripcion,
                 pro_prov_id_fk as proveedor_id,
                 pro_det_id_fk as detalle_id
-            FROM producto
+            FROM t_producto
         """)
         productos = cursor.fetchall()
         cursor.close()

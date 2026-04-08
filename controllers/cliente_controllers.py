@@ -34,3 +34,5 @@ def cnregistrarcliente():
     
     return jsonify ({"mensaje": "cliente registrado", "datos":p}), 201
     
+    
+    
